@@ -5,7 +5,7 @@
 ![Anaconda](https://img.shields.io/badge/Anaconda-Compatible-orange.svg)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)
 
-This repository contains **demo codes and lab experiments** used during lectures and practical sessions of the Computer Vision course at BITS Pilani Dubai Campus. This repository is designed to work seamlessly with Anaconda Navigator and Python 3.10 on Windows, macOS, and Linux.
+##### This repository contains **demo codes and lab experiments** used during lectures and practical sessions of the Computer Vision course at BITS Pilani Dubai Campus. This repository is designed to work seamlessly with Anaconda Navigator and Python 3.10 on Windows, macOS, and Linux.
 ---
 ## 📋 Course Overview
 
@@ -26,7 +26,7 @@ This course covers the complete spectrum of computer vision, from basic image pr
 - Webcam (for camera calibration exercises)
 ---
 ## 🚀 Environment Setup(Lab 00): Installation & Setup
-#### ![Anaconda](https://avatars.githubusercontent.com/u/6764390?s=200&v=4) Step 1: Install Anaconda
+#### 🟢 Step 1: Install Anaconda
 1. Go to [Anaconda Downloads](https://www.anaconda.com/download).  
 2. Select the correct installer:  
    - **Windows (64-bit)** → Graphical Installer.  
