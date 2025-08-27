@@ -5,7 +5,8 @@
 ![Anaconda](https://img.shields.io/badge/Anaconda-Compatible-orange.svg)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)
 
-##### This repository contains **demo codes and lab experiments** used during lectures and practical sessions of the Computer Vision course at BITS Pilani Dubai Campus. This repository is designed to work seamlessly with Anaconda Navigator and Python 3.10 on Windows, macOS, and Linux.
+This repository contains **demo codes and lab experiments** used during lectures and practical sessions of the Computer Vision course at BITS Pilani Dubai Campus. This repository is designed to work seamlessly with Anaconda Navigator and Python 3.10 on Windows, macOS, and Linux.
+
 ---
 ## 📋 Course Overview
 
