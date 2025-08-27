@@ -110,20 +110,20 @@ print(f"Python version: {sys.version}\n")
 # Core packages
 try:
     import cv2
-    print(f"✅ OpenCV: {cv2.__version__}")
+    print(f" OpenCV: {cv2.__version__}")
 except Exception as e:
-    print(f"❌ OpenCV not working: {e}")
+    print(f"OpenCV not working: {e}")
 
 try:
     import torch
-    print(f"✅ PyTorch: {torch.__version__}")
+    print(f"PyTorch: {torch.__version__}")
     print(f"   CUDA available: {torch.cuda.is_available()}")
     if hasattr(torch.backends, "mps"):
         print("   MPS available:", torch.backends.mps.is_available())
     else:
         print("   MPS available: N/A")
 except Exception as e:
-    print(f"❌ PyTorch not working: {e}")
+    print(f"PyTorch not working: {e}")
 
 # Additional packages
 for pkg_name, import_name in [
@@ -141,11 +141,11 @@ for pkg_name, import_name in [
     try:
         module = __import__(import_name)
         version = getattr(module, "__version__", "installed (version unknown)")
-        print(f"✅ {pkg_name}: {version}")
+        print(f"{pkg_name}: {version}")
     except Exception as e:
-        print(f"❌ {pkg_name} not working: {e}")
+        print(f"{pkg_name} not working: {e}")
 
-print("\n🎯 If all required packages show ✅, your environment is ready!")
+print("\n All required packages available, your environment is ready!")
 ```
 
 Run verification:
