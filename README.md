@@ -60,55 +60,6 @@ pip install timm transformers albumentations umap-learn mediapipe tqdm jupyterla
 # Verify installation
 python lab_setup_check.py
 
-
-
-## 📋 Course Overview
-
-This course covers the complete spectrum of computer vision, from basic image processing to advanced deep learning techniques:
-
-- **Image Fundamentals**: Digital image format, camera models, and calibration
-- **Feature Extraction**: Image features for classification and segmentation
-- **Multiview Geometry**: Optical flow and Structure From Motion (SFM)
-- **Machine Learning**: Classical models to modern deep learning approaches
-- **Deep Learning Models**: CNNs, RNNs, Transformers, and Generative Models
-- **3D Vision**: Point clouds, depth estimation, and 3D reconstruction
-
-## 🛠️ Prerequisites
-
-- **Anaconda Navigator** installed on your system [https://www.anaconda.com/download](https://www.anaconda.com/download)
-- **Python 3.10** (included with recent Anaconda versions)
-- Basic knowledge of Python programming
-- Webcam (for camera calibration exercises)
-
-## 🚀 Installation & Setup
-
-### Method 1: Using Anaconda Navigator (Recommended)
-
-1. **Open Anaconda Navigator**
-2. Create a new environment:
-   - Click on "Environments" → "Create"
-   - Name: `cvlab`
-   - Python version: **3.10**
-   - Click "Create"
-3. **Install required packages**:
-   - In your `cvlab` environment, click "Open Terminal"
-   - Run the following commands:
-
-```bash
-# Install core computer vision packages
-conda install -c conda-forge opencv numpy matplotlib scikit-learn scikit-image pillow
-
-# Install PyTorch with MPS support for Apple Silicon
-conda install -c pytorch pytorch torchvision torchaudio
-
-# Install additional deep learning and utility packages
-pip install timm transformers albumentations umap-learn mediapipe tqdm jupyterlab
-
-# Verify installation
-python lab_setup_check.py
-
-**### Method 2: Manual Setup from Terminal**
-
 ## 📜 License
 
 MIT License (unless specified otherwise in individual folders).
