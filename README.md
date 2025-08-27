@@ -39,7 +39,7 @@ This course covers the complete spectrum of computer vision, from basic image pr
 3. **Install required packages**:
    - In your `cvlab` environment, click "Open Terminal"
    - Run the following commands:
-
+```bash
 # Install core computer vision packages
 conda install -c conda-forge opencv numpy matplotlib scikit-learn scikit-image pillow
 
@@ -54,6 +54,30 @@ conda install -c pytorch pytorch torchvision torchaudio
 conda install -c pytorch pytorch torchvision torchaudio cpuonly
 
 # Install additional deep learning and utility packages
+pip install timm transformers albumentations umap-learn mediapipe tqdm jupyterlab
+
+# Verify installation
+python lab_setup_check.py
+Method 2: Manual Setup from Terminal/Command Prompt
+bash
+# Create and activate environment
+conda create -n cvlab python=3.10
+conda activate cvlab
+
+# Install packages
+conda install -c conda-forge opencv numpy matplotlib scikit-learn scikit-image pillow
+
+# Install PyTorch based on your system
+# Windows/Linux with NVIDIA GPU:
+conda install -c pytorch pytorch torchvision torchaudio cudatoolkit=11.7
+
+# macOS:
+conda install -c pytorch pytorch torchvision torchaudio
+
+# CPU-only:
+conda install -c pytorch pytorch torchvision torchaudio cpuonly
+
+# Install remaining packages
 pip install timm transformers albumentations umap-learn mediapipe tqdm jupyterlab
 
 # Verify installation
