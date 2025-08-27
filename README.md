@@ -184,6 +184,14 @@ plt.show()
 
 MIT License (unless specified otherwise in individual folders).
 
+---
+
+## 📖 Citation
+
+If you use these materials in your work, please cite as:
+
+Elakkiya R. (2025). *Computer Vision Lab Demos — BITS Pilani Dubai Campus*. GitHub repository: [https://github.com/Elakkiya16/BITSF459\_Computer\_Vision](https://github.com/Elakkiya16/BITSF459_Computer_Vision)
+
 
 
 
