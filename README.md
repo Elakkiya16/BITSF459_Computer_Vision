@@ -40,7 +40,6 @@ This course covers the complete spectrum of computer vision, from basic image pr
    - In your `cvlab` environment, click "Open Terminal"
    - Run the following commands:
 
-```bash
 # Install core computer vision packages
 conda install -c conda-forge opencv numpy matplotlib scikit-learn scikit-image pillow
 
