@@ -213,4 +213,6 @@ plt.xlim([0,256]); plt.title('RGB Channel Histograms'); plt.xlabel('Intensity');
 ```
 
 ---
-
+## Challenge Extensions
+- Apply pseudocolor to gray_selfie.jpg with cv2.applyColorMap (e.g., JET, TURBO). Save and compare.
+- Implement a free‑angle rotation (e.g., 33°) that preserves all content (expand canvas & re‑center).
