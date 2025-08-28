@@ -34,8 +34,12 @@ Labs/Lab01_SelfieIO/
 ---
 
 ## Step 1 — Capture a Selfie (desktop script)
+Capture your selfie using the webcam. You'll learn:
+  - How to initialize and access webcam feed
+  - Real-time video display with OpenCV
+  - Image capture and saving techniques
 
-> Run as a **standalone script** from Terminal/Command Prompt (not inside Jupyter).
+> Run as a **standalone script** from Terminal/Command Prompt (or create python file inside Jupyter).
 
 Save as `capture_selfie.py` and run `python capture_selfie.py`.
 
@@ -66,8 +70,15 @@ cv2.destroyAllWindows()
 > Tips: Click the window to focus before pressing keys. On macOS, grant Camera permissions to Terminal/VS Code.
 
 ---
+## Step 2: Color Space Exploration (Individual)
+Explore different color spaces one by one:
+  - **BGR/RGB**: Default color space in OpenCV
+  - **Grayscale**: Single-channel intensity representation
+  - **HSV**: Hue, Saturation, Value color space
+  - **LAB**: Perceptually uniform color space
+  - **YCrCb**: Luminance and chrominance components
 
-## Step 3A — Color Space Conversions (notebook‑safe, no subplots)
+### Step 2A — Color Space Conversions (notebook‑safe, no subplots)
 
 Use **Matplotlib** for display and save raw color‐space arrays to disk.
 
@@ -98,7 +109,7 @@ plt.figure(figsize=(6,5)); plt.imshow(cv2.cvtColor(lab,   cv2.COLOR_LAB2RGB));  
 plt.figure(figsize=(6,5)); plt.imshow(cv2.cvtColor(ycrcb, cv2.COLOR_YCrCb2RGB)); plt.axis('off'); plt.title('YCrCb (display)'); plt.show()
 ```
 
-### Optional Step 3B — Comparison Grid (subplots)
+### Optional Step 2B — Comparison Grid (subplots)
 
 ```python
 import cv2, matplotlib.pyplot as plt
@@ -119,8 +130,14 @@ plt.tight_layout(); plt.savefig('color_spaces_comparison.jpg', dpi=150, bbox_inc
 ```
 
 ---
-
-## Step 4A — Image Transformations (notebook‑safe, no subplots)
+## Step 3: Image Transformations (Individual)
+Apply various transformations to your image:
+  - **Mirror Effect:** Horizontal flipping
+  - **Negative Effect:** Photo negative transformation
+  - **Brightness Adjustment:** Increase and decrease intensity
+  - **Rotation:** 45-degree image rotation
+  - **Blur Effect:** Gaussian smoothing
+### Step 3A — Image Transformations (notebook‑safe, no subplots)
 
 ```python
 import cv2, matplotlib.pyplot as plt
@@ -151,7 +168,7 @@ for title, im in [
     plt.figure(figsize=(6,5)); plt.imshow(cv2.cvtColor(im, cv2.COLOR_BGR2RGB)); plt.axis('off'); plt.title(title); plt.show()
 ```
 
-### Optional Step 4B — Transformations Grid (subplots)
+### Optional Step 3B — Transformations Grid (subplots)
 
 ```python
 import cv2, matplotlib.pyplot as plt
@@ -175,7 +192,7 @@ plt.tight_layout(); plt.savefig('transformations_comparison.jpg', dpi=150, bbox_
 
 ---
 
-## Step 5 — Histograms (grayscale + RGB channels)
+## Step 4 — Histograms (grayscale + RGB channels)
 
 ```python
 import cv2, numpy as np, matplotlib.pyplot as plt
@@ -196,14 +213,3 @@ plt.xlim([0,256]); plt.title('RGB Channel Histograms'); plt.xlabel('Intensity');
 
 ---
 
-## Deliverables
-
-* `my_selfie.jpg` and converted images (`gray_selfie.jpg`, `hsv_selfie.jpg`, `lab_selfie.jpg`, `ycrcb_selfie.jpg`).
-* Saved results of transforms (mirror/negative/bright/dark/rotated/blurred).
-* `color_spaces_comparison.jpg` and `transformations_comparison.jpg` (if you ran the optional grids).
-* A short Markdown note (≤80 words): what differences you observe across color spaces and how histograms change.
-
-## Notes
-
-* HSV/Lab/YCrCb files saved with `cv2.imwrite` contain **encoded channels**; convert back to RGB for display.
-* Avoid `cv2.imshow` in notebooks; use Matplotlib display as shown above.
