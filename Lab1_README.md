@@ -137,6 +137,7 @@ Apply various transformations to your image:
   - **Brightness Adjustment:** Increase and decrease intensity
   - **Rotation:** 45-degree image rotation
   - **Blur Effect:** Gaussian smoothing
+
 ### Step 3A — Image Transformations (notebook‑safe, no subplots)
 
 ```python
