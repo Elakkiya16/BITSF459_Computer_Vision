@@ -1,10 +1,10 @@
-# 🧪 Computer Vision Lab — Image Transformations & Mini Snapchat Filter
+# Lab 02— Image Transformations & Mini Snapchat Filter
 
-This lab extends your work from **Step 3: Image Transformations** into fun applications. You will first complete static transformations, then explore tasks on **pencil sketching**, **image formats**, and finally an **interactive Mini Snapchat Filter**.
+This lab extends your work from **Image Transformations** into fun applications. You will first complete static transformations, then explore tasks on **pencil sketching**, **image formats**, and finally an **interactive Mini Snapchat Filter**.
 
 ---
 
-## ✅ Step 3 Recap: Image Transformations
+## Image Transformations
 
 * You have already implemented transformations on your selfie (`my_selfie.jpg`):
 
@@ -104,21 +104,6 @@ After you finish static tasks, we move to a **live webcam demo**. The instructor
     c. Show transformed frame
 3. Quit when key == 'q'
 ```
-
-**Deliverables:**
-
-* Working live filter script
-* At least 3 filters implemented
-* Add a **pencil sketch filter** as `p`
-* Bonus: save a frame on pressing `s`
-
-### Rubric (10 pts)
-
-* Webcam loop works (2)
-* At least 3 filters implemented (3)
-* Pencil sketch added live (3)
-* Creativity / bonus features (2)
-
 ---
 
 ## 📦 Submission Package
