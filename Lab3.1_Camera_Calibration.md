@@ -31,7 +31,7 @@ while True:
         time.sleep(0.2)
 cap.release()
 cv2.destroyAllWindows()
-
+```
 
 ---
 
