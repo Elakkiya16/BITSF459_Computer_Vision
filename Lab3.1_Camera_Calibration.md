@@ -35,7 +35,7 @@ cv2.destroyAllWindows()
 
 ---
 
-## 📄 Task 2 — Calibration (`README_Task2.md`)
+## 📄 Task 2 — Calibration
 
 ```markdown
 # Task 2 — Camera Calibration
@@ -79,7 +79,7 @@ print("Distortion Coefficients:\n", dist.ravel())
 
 ---
 
-## 📄 Task 3 — Distortion Correction (`README_Task3.md`)
+## 📄 Task 3 — Distortion Correction
 
 ```markdown
 # Task 3 — Distortion Correction
