@@ -75,7 +75,7 @@ ret, K, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, gray.shap
 
 print("\nCamera Matrix (K):\n", K)
 print("Distortion Coefficients:\n", dist.ravel())
-
+```
 
 ---
 
@@ -109,3 +109,4 @@ while True:
     if cv2.waitKey(1) == 27: break
 cap.release()
 cv2.destroyAllWindows()
+```
