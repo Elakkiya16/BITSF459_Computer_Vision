@@ -1,4 +1,4 @@
-# Task 1 — Webcam Capture
+# Task 3.1 — Webcam Capture
 
 ### 📚 Concept Recap
 Camera calibration requires **multiple images** of a known pattern (checkerboard).  
