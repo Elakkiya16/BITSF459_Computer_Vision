@@ -37,9 +37,6 @@ cv2.destroyAllWindows()
 
 ## 📄 Task 2 — Calibration
 
-```markdown
-# Task 2 — Camera Calibration
-
 ### 🎯 Objective
 Calibrate your webcam to compute the camera matrix and distortion coefficients.
 
@@ -80,9 +77,6 @@ print("Distortion Coefficients:\n", dist.ravel())
 ---
 
 ## 📄 Task 3 — Distortion Correction
-
-```markdown
-# Task 3 — Distortion Correction
 
 ### 🎯 Objective
 Demonstrate distortion correction in a live webcam feed.
