@@ -88,8 +88,6 @@ Given the patch:
 20 30 40
 30 40 50
 
-scss
-Copy code
 Compute the smoothed center pixel using the Gaussian kernel above (use replicate padding if needed).
 
 ### A2. Gaussian Smoothing (Corner Pixel)
@@ -100,8 +98,6 @@ Using A1’s smooth value:
 Detail = Original(center) – Smooth(center)
 Sharpened(center) = Original(center) + α * Detail
 
-mathematica
-Copy code
 Do this for α = 1.0 and α = 1.5.
 
 ### A4. Prewitt Gradient (Vertical Edge)
@@ -110,8 +106,6 @@ Patch:
 10 10 200
 10 10 200
 
-makefile
-Copy code
 Compute `Gx, Gy, |∇f|, θ`. State edge orientation.
 
 ### A5. Sobel Gradient (Horizontal Edge)
@@ -120,24 +114,26 @@ Patch:
 10 10 10
 200 200 200
 
-csharp
-Copy code
 Compute `Gx, Gy, |∇f|, θ`. Compare with Prewitt.
 
-### A6. Non-Maximum Suppression (1D Concept)
+### A6. Sobel Gradient (Vertical Edge)
+Patch:
+10 10 200
+10 10 200
+10 10 200
+
+Compute `Gx, Gy, |∇f|, θ`. Compare with Prewitt.
+
+### A7. Non-Maximum Suppression (1D Concept)
 Gradient magnitudes:
 [0, 5, 10, 6, 2]
 
-scss
-Copy code
 After NMS, which pixel(s) survive?
 
-### A7. Double Thresholding + Hysteresis
+### A8. Double Thresholding + Hysteresis
 Magnitudes:
 [40, 80, 20, 100, 50]
 
-yaml
-Copy code
 Thresholds: low = 30, high = 70.  
 1. Label as Strong, Weak, or Non-edge.  
 2. Apply hysteresis: which weak edges remain?
@@ -166,8 +162,6 @@ prewitt_gy.png
 prewitt_mag.png
 prewitt_dir.png
 
-makefile
-Copy code
 
 ### B5. Sobel Gradients
 Apply Sobel Sx, Sy.  
@@ -176,9 +170,6 @@ sobel_gx.png
 sobel_gy.png
 sobel_mag.png
 sobel_dir.png
-
-yaml
-Copy code
 
 ### B6. Non-Maximum Suppression
 Implement NMS (quantize θ to {0°, 45°, 90°, 135°}).  
@@ -202,21 +193,6 @@ Summarize in `notes.md`.
 
 ---
 
-## Deliverables
-- `notes.md`: manual calculations (Part A) + answers.
-- `results/`: all output images.
-- `src/`: your code files.
-- `README.md`: short run instructions.
-
----
-
-## Marking Scheme
-- Part A (manual): 30 pts  
-- Part B (implementation): 60 pts  
-- Sensitivity + reflection: 10 pts
-
----
-
 ## Appendix — Kernels
 
 ### Gaussian (σ=1, 3×3)
@@ -224,8 +200,6 @@ Summarize in `notes.md`.
 [0.097, 0.159, 0.097],
 [0.059, 0.097, 0.059] ]
 
-shell
-Copy code
 
 ### Prewitt
 Px = [ [-1, 0, 1],
@@ -236,8 +210,7 @@ Py = [ [ 1, 1, 1],
 [ 0, 0, 0],
 [-1, -1, -1] ]
 
-shell
-Copy code
+
 
 ### Sobel
 Sx = [ [-1, 0, 1],
