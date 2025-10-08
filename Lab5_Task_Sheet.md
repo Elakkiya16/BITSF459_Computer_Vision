@@ -7,7 +7,7 @@
 
 ---
 
-## Part A — Manual Harris Derivation on a 3×3 Patch (By Hand)
+## Part A — Manual Harris Derivation on a 3×3 Patch (not using library)
 
 Use the following **3×3** intensity patch **I** with **no-padding** finite-difference rules (from lecture slides). Show **all intermediate arithmetic**.
 
