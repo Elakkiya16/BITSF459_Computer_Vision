@@ -1,12 +1,5 @@
 # 🧪 Lab 6: Scale Invariant Detection — Laplacian of Gaussian (LoG) Response
 
-**Course:** Computer Vision (CS F459)  
-**Instructor:** Dr. Elakkiya R  
-**Date:** 09/10/2025  
-**Duration:** 1 hour  
-
----
-
 ## 🎯 Objective
 
 To understand *scale-space representation* and how feature detection becomes **scale invariant** by finding the scale at which a feature’s response is maximal.
