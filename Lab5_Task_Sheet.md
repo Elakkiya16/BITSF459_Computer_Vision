@@ -93,51 +93,10 @@ cv2.imwrite('lab05_shitomasi.png', vis2)
 ---
 
 ## Deliverables
-- **Part A:** Scans/photos of handwritten calculations and the filled tables (`Ix`, `Iy`, `Ixx`, `Iyy`, `Ixy`, `Sxx`, `Syy`, `Sxy`, `H`, eigenvalues/vectors, `R`, interpretation).  
+- **Part A:** Manual calculations and the filled tables (`Ix`, `Iy`, `Ixx`, `Iyy`, `Ixy`, `Sxx`, `Syy`, `Sxy`, `H`, eigenvalues/vectors, `R`, interpretation).  
 - **Part B:** Corner-overlay images (`PNG/JPEG`) for at least **three** parameter settings, plus a short report (≤ **1 page**) with observations.  
-- A concise **`README.md`** in `/labs/lab05` explaining how to reproduce Part B (commands, dependencies, image used).
 
-### Suggested repo layout
-```
-labs/
-  lab05/
-    PartA/                 # scans/photos of hand calculations
-    PartB/
-      harris_experiment.py # your code (name as you like)
-      lab05_harris.png
-      lab05_shitomasi.png
-      ... (other variants)
-    README.md              # this file
-```
 
-### Environment
-Create a virtual environment and install dependencies (example):
-```bash
-python -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
-pip install opencv-python numpy
-```
-
-### Repro Tips
-- Keep the **image path** relative to `/labs/lab05/PartB`.
-- Log the exact **parameters** used for each run.
-- If results look noisy, adjust Gaussian blur (`(3,3)` or `(5,5)`), the **threshold factor**, or `blockSize`.
-
----
-
-## Grading Rubric (100 points)
-- **Part A correctness & completeness** (Ix/Iy/Ixx/Iyy/Ixy/H/eigs/R): **40 pts**  
-- **Part B implementation** (runs, correct visualization, parameter sweep): **40 pts**  
-- **Analysis quality & clarity** (writing, comparisons, insights): **20 pts**
-
----
-
-## Academic Integrity
-Part A must be solved **by hand** (no symbolic or CAS tools). Discussion of high-level ideas is allowed, but all submitted work must be your own.
-
----
 
 **Notes:**  
 - Use **k = 0.04** unless you are sweeping the parameter.  
-- For Shi–Tomasi, ensure fair comparison (same blur and similar thresholds).  
-- If you choose a large image, consider resizing to speed up experiments.
