@@ -1,12 +1,5 @@
 # CV Lab 5 — Harris Corner Detector: Manual Derivation + Image Experiment
 
-**Course:** Computer Vision (CS F459)  
-**Lab \#**: 5  
-**Topic:** Harris Corners  
-**Submission:** Push to your course Git repository under `/labs/lab05`
-
----
-
 ## Learning Objectives
 - Derive the second-moment matrix **H** for a small patch and interpret its eigen-system.  
 - Compute the Harris response **R** and decide **corner / edge / flat** based on eigenvalues.  
