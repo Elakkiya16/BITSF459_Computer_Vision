@@ -57,8 +57,7 @@ Use the following **3×3** intensity patch **I** with **no-padding** finite-diff
 3. Run Harris (OpenCV `cv2.cornerHarris`) with a **parameter sweep**:  
    - `blockSize ∈ {2, 3, 5}`, `ksize = 3`, `k ∈ {0.04, 0.06, 0.08}`.  
 4. Normalize the response, threshold to mark strong corners, and overlay on the image. Save images for **≥ 3** different settings.  
-5. Compare with **Shi–Tomasi** (`cv2.goodFeaturesToTrack`) on the same image. Record the number of corners and visually compare locations.  
-6. Write **5–8 sentences** discussing how `blockSize` and `k` affect the number and stability of detected corners.
+5. Observe how `blockSize` and `k` affect the number and stability of detected corners.
 
 ### Reference skeleton
 ```python
@@ -94,9 +93,102 @@ cv2.imwrite('lab05_shitomasi.png', vis2)
 
 ## Deliverables
 - **Part A:** Manual calculations and the filled tables (`Ix`, `Iy`, `Ixx`, `Iyy`, `Ixy`, `Sxx`, `Syy`, `Sxy`, `H`, eigenvalues/vectors, `R`, interpretation).  
-- **Part B:** Corner-overlay images (`PNG/JPEG`) for at least **three** parameter settings, plus a short report (≤ **1 page**) with observations.  
-
-
+- **Part B:** Corner-overlay images (`PNG/JPEG`) for at least **three** parameter settings. 
 
 **Notes:**  
-- Use **k = 0.04** unless you are sweeping the parameter.  
+- Use **k = 0.04** unless you are sweeping the parameter.
+
+# CV Lab 5 — Harris Corner Detector (Tasks C & D)
+
+This part extends Lab 5 to test two properties of the Harris Corner Detector:
+1. **Brightness invariance** — adding a constant to pixel intensities should not affect detected corners.
+2. **Scale sensitivity** — resizing the image should change which corners are detected.
+
+---
+
+## Part C — Brightness Invariance Test
+
+### Objective
+Verify that the Harris corner detector is **invariant to additive brightness changes**.
+
+### Tasks
+1. Create bright and dark versions of your grayscale image:
+   ```python
+   bright = cv2.convertScaleAbs(gray, alpha=1.0, beta=50)   # +50 brightness
+   dark   = cv2.convertScaleAbs(gray, alpha=1.0, beta=-30)  # −30 brightness
+   ```
+2. Run the same Harris parameters (`blockSize`, `ksize`, `k`) on  
+   **original**, **bright**, and **dark** images.
+3. Normalize the Harris response before thresholding:
+   ```python
+   dst = dst / dst.max()
+   ```
+4. Overlay corners and record:
+   - Number of detected corners
+   - Maximum R value (`R.max()`)
+
+### Expected Observation
+- Corner positions remain unchanged.  
+- Gradients `Ix`, `Iy` depend on **differences**, so adding a constant brightness offset has no effect.  
+- **Conclusion:** Harris is **brightness invariant**.
+
+#### Result Table
+| Image | blockSize | k | ksize | Threshold | Corner Count | Max R |
+|:------|:-----------|:--|:------|:-----------|:--------------|:------|
+| Original | 3 | 0.04 | 3 | 0.01 × max |  |  |
+| Bright (+50) | 3 | 0.04 | 3 | 0.01 × max |  |  |
+| Dark (−30) | 3 | 0.04 | 3 | 0.01 × max |  |  |
+
+---
+
+## Part D — Scale Sensitivity Test
+
+### Objective
+Show that the Harris corner detector is **not scale invariant**.
+
+### Tasks
+1. Resize the same image:
+   ```python
+   scaled  = cv2.resize(gray, None, fx=1.5, fy=1.5, interpolation=cv2.INTER_LINEAR)
+   smaller = cv2.resize(gray, None, fx=0.5, fy=0.5, interpolation=cv2.INTER_AREA)
+   ```
+2. Apply the same Harris parameters (`blockSize`, `k`, `ksize`) on  
+   **original**, **scaled-up**, and **scaled-down** images.
+3. Normalize and overlay corners as before.
+4. Compare:
+   - Do the same physical corners appear?
+   - How do counts and R values change?
+
+### Expected Observation
+- Harris uses a **fixed local window** (`blockSize`), so resizing alters the apparent corner size.  
+- Corners may shift, merge, or disappear after scaling.  
+- **Conclusion:** Harris is **not scale invariant** — this motivates the need for scale-space detectors such as **SIFT**.
+
+#### Result Table
+| Image | Scale | blockSize | k | ksize | Threshold | Corner Count | Max R |
+|:------|:-------|:-----------|:--|:------|:-----------|:--------------|:------|
+| Original | 1.0× | 3 | 0.04 | 3 | 0.01 × max |  |  |
+| Scaled Up | 1.5× | 3 | 0.04 | 3 | 0.01 × max |  |  |
+| Scaled Down | 0.5× | 3 | 0.04 | 3 | 0.01 × max |  |  |
+
+---
+
+## Deliverables
+
+| Part | Task | Required Output |
+|:-----|:------|:----------------|
+| **C** | Brightness Invariance Test | Overlays + table of corner counts and `R.max()` |
+| **D** | Scale Sensitivity Test | Overlays + comparison table showing changes |
+
+---
+
+### Key Takeaways
+
+| Property | Invariance | Explanation |
+|:-----------|:-------------|:-------------|
+| Brightness Shift | ✅ Invariant | Gradient differences remove constant offsets |
+| Contrast Scaling | ⚙️ Semi-invariant (if normalized) | Gradients scale proportionally |
+| Rotation | ✅ Nearly invariant | Gradient orientations rotate consistently |
+| **Scale** | ❌ Not invariant | Fixed `blockSize` fails across scales |
+
+---
