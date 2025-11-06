@@ -66,7 +66,7 @@ Match keypoints between the two images.
 - **🧠 Mini Analysis:**  
   How does changing `crossCheck` or the **ratio threshold** affect the number of valid matches?
 
-## 🧮 Stage 3 (20 – 40 min): Geometry Guru
+## 🧮 Stage 3 (20 – 30 min): Geometry Guru
 
 Find the geometric relation between the two cameras.
 
@@ -81,7 +81,7 @@ Find the geometric relation between the two cameras.
   What geometric relationship does **F** represent between the two images?
   🧠 **Mini Analysis:** Run RANSAC with thresholds 0.5, 1.0, and 5.0 pixels. What happens to inlier count vs accuracy?
 
-## 📷 Stage 4 (40 – 50 min): Pose Explorer
+## 📷 Stage 4 (30 – 40 min): Pose Explorer
 
 Recover camera orientation and position.
 
@@ -103,7 +103,7 @@ Recover camera orientation and position.
   If `t = [0.3, 0.1, 0.9]`, what does its direction physically represent?  
   What would change if the camera were **uncalibrated**?
 
-## 🏗️ Stage 5 (50 – 60 min): 3-D Builder
+## 🏗️ Stage 5 (40 – 60 min): 3-D Builder
 
 Reconstruct and visualize 3-D scene points.
 
