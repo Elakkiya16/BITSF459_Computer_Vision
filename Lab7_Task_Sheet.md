@@ -45,6 +45,25 @@ pip install opencv-python numpy matplotlib
 - **🎯 Goal:** Detect and visualize top 100 SIFT keypoints per image.  
 - **💡 Hint:** Use `cv2.SIFT_create()` for feature detection.  
 - **📸 Deliverable:** Two images with circles marking the detected keypoints.
+🧠 **Mini Analysis:** Which detector gave denser coverage? Why might that matter for matching later?
+
+## 🔗 Stage 2 (20 – 40 min): Feature Matchmaker
+
+Match keypoints between the two images.
+
+- **🎯 Goal:**  
+  Compute descriptor matches and visualize them using  
+  ```python
+  cv2.drawMatches()
+  ```
+  - **💡 Hint:**  
+  Experiment with both `BFMatcher` and `FlannBasedMatcher`.
+
+- **📸 Deliverable:**  
+  Save and include `output_match.jpg` showing the matched keypoints.
+
+- **🧠 Mini Analysis:**  
+  How does changing `crossCheck` or the **ratio threshold** affect the number of valid matches?
 
 ## 🧮 Stage 3 (40 – 60 min): Geometry Guru
 
@@ -59,6 +78,7 @@ Find the geometric relation between the two cameras.
 
 - **💭 Question:**  
   What geometric relationship does **F** represent between the two images?
+  🧠 **Mini Analysis:** Run RANSAC with thresholds 0.5, 1.0, and 5.0 pixels. What happens to inlier count vs accuracy?
 
 ## 📷 Stage 4 (60 – 75 min): Pose Explorer
 
@@ -75,6 +95,12 @@ Recover camera orientation and position.
 
 - **📸 Deliverable:**  
   Print the **R** and **t** matrices, and briefly explain what the **translation vector** represents.
+  📄 - **📄 Deliverable:**  
+  Save **R** and **t** to `pose.txt`.
+
+- **🧠 Mini Analysis:**  
+  If `t = [0.3, 0.1, 0.9]`, what does its direction physically represent?  
+  What would change if the camera were **uncalibrated**?
 
 ## 🏗️ Stage 5 (75 – 90 min): 3-D Builder
 
@@ -84,6 +110,17 @@ Reconstruct and visualize 3-D scene points.
   Triangulate points using  
   ```python
   cv2.triangulatePoints()
+  ```
+  and plot in **3-D** using Matplotlib.
+
+- **💡 Bonus:**  
+  Try a different image pair and compare the **depth spread**.
+
+- **📊 Deliverable:**  
+  Save and include `reconstruction.png` — the 3-D point cloud plot.
+
+- **🧠 Mini Analysis:**  
+  If the reconstruction looks **flattened**, what does that indicate about the **camera baseline** or **calibration**?
 
 
 ## 🧠 Quick Reflection
@@ -91,6 +128,7 @@ Reconstruct and visualize 3-D scene points.
 - Why do **SIFT features** remain stable across multiple images?  
 - What parameters or unknowns **increase when cameras are uncalibrated**?  
 - What does **bundle adjustment** refine after triangulation?
+- What is the real-world trade-off between accuracy and runtime in SfM?
 
 ## 🏁 Submission
 
@@ -113,6 +151,7 @@ Push your notebook and screenshots to your GitHub repository:
 | 3 | F & RANSAC | 2 |
 | 4 | Pose Estimation | 2 |
 | 5 | 3-D Reconstruction | 2 |
+|💎 Bonus| Visualization Innovation | +2 |
 
 ⏱️ **Treat this like a real-time mini hackathon!**  
 Focus on making something that *works*, visualize every result, and **commit before time’s up.**
