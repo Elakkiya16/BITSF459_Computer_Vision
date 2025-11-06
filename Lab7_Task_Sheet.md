@@ -85,7 +85,7 @@ Reconstruct and visualize 3-D scene points.
   ```python
   cv2.triangulatePoints()
 
-```markdown
+
 ## 🧠 Quick Reflection
 
 - Why do **SIFT features** remain stable across multiple images?  
