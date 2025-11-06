@@ -34,11 +34,12 @@ wget https://raw.githubusercontent.com/opencv/opencv/master/samples/data/aloeR.j
 
 To get started, install the required packages:
 
+---
 
 # Run this in your terminal or Colab cell
 pip install opencv-python numpy matplotlib
 
-## 🧩 Stage 1 (0 – 20 min): Feature Hunt
+## 🧩 Stage 1 (0 – 10 min): Feature Hunt
 
 🕵️‍♂️ Detect distinctive points that survive scale and rotation changes.
 
@@ -47,7 +48,7 @@ pip install opencv-python numpy matplotlib
 - **📸 Deliverable:** Two images with circles marking the detected keypoints.
 🧠 **Mini Analysis:** Which detector gave denser coverage? Why might that matter for matching later?
 
-## 🔗 Stage 2 (20 – 40 min): Feature Matchmaker
+## 🔗 Stage 2 (10 – 20 min): Feature Matchmaker
 
 Match keypoints between the two images.
 
@@ -65,7 +66,7 @@ Match keypoints between the two images.
 - **🧠 Mini Analysis:**  
   How does changing `crossCheck` or the **ratio threshold** affect the number of valid matches?
 
-## 🧮 Stage 3 (40 – 60 min): Geometry Guru
+## 🧮 Stage 3 (20 – 40 min): Geometry Guru
 
 Find the geometric relation between the two cameras.
 
@@ -80,7 +81,7 @@ Find the geometric relation between the two cameras.
   What geometric relationship does **F** represent between the two images?
   🧠 **Mini Analysis:** Run RANSAC with thresholds 0.5, 1.0, and 5.0 pixels. What happens to inlier count vs accuracy?
 
-## 📷 Stage 4 (60 – 75 min): Pose Explorer
+## 📷 Stage 4 (40 – 50 min): Pose Explorer
 
 Recover camera orientation and position.
 
@@ -102,7 +103,7 @@ Recover camera orientation and position.
   If `t = [0.3, 0.1, 0.9]`, what does its direction physically represent?  
   What would change if the camera were **uncalibrated**?
 
-## 🏗️ Stage 5 (75 – 90 min): 3-D Builder
+## 🏗️ Stage 5 (50 – 60 min): 3-D Builder
 
 Reconstruct and visualize 3-D scene points.
 
@@ -122,7 +123,7 @@ Reconstruct and visualize 3-D scene points.
 - **🧠 Mini Analysis:**  
   If the reconstruction looks **flattened**, what does that indicate about the **camera baseline** or **calibration**?
 
-## 🎨 Stage 6 (Open Creativity Challenge)
+## 🎨 Stage 6 (Open Creativity Challenge: 60 -90 min)
 
 Push your creativity beyond the basic reconstruction!
 
@@ -149,7 +150,10 @@ Design any small twist or extension — e.g., adding a third view, plotting came
 - Add one extra output file (e.g., `creative_output.png` or `depth_animation.mp4`)  
 - Write 3–5 lines in your README explaining your creative experiment.
 
-**Marks:** 🎖️ *Up to +3 Bonus for originality and insight.*
+**Marks:** 🎖️ *Up to +5 Bonus for originality and insight.*
+
+---
+
 ## 🧠 Quick Reflection
 
 - Why do **SIFT features** remain stable across multiple images?  
