@@ -122,7 +122,34 @@ Reconstruct and visualize 3-D scene points.
 - **🧠 Mini Analysis:**  
   If the reconstruction looks **flattened**, what does that indicate about the **camera baseline** or **calibration**?
 
+## 🎨 Stage 6 (Open Creativity Challenge)
 
+Push your creativity beyond the basic reconstruction!
+
+Choose **any one** of the following mini-challenges (or invent your own) and implement it in your notebook.
+
+### 💡 Option A: Visual Story
+Create a **rotating 3-D visualization** of your reconstructed points using Matplotlib’s animation tools or Plotly.  
+> Hint: Try rotating the viewpoint to simulate a camera orbit.
+
+### ⚙️ Option B: Precision Tweaker
+Experiment with **different detectors** (e.g., ORB, AKAZE) and compare their reconstruction quality.  
+> Question: Which detector produced the most stable 3-D structure, and why?
+
+### 🌍 Option C: Depth Colorizer
+Map the reconstructed 3-D points by their **depth (Z-value)** and color them using a heatmap palette.  
+> Hint: Use `ax.scatter(x, y, z, c=z, cmap='viridis')`.
+
+### 🧠 Option D: Custom Innovation
+Design any small twist or extension — e.g., adding a third view, plotting camera frustums, or using your own captured scene.  
+> Briefly explain what you changed and what you observed.
+
+
+**Deliverable:**  
+- Add one extra output file (e.g., `creative_output.png` or `depth_animation.mp4`)  
+- Write 3–5 lines in your README explaining your creative experiment.
+
+**Marks:** 🎖️ *Up to +3 Bonus for originality and insight.*
 ## 🧠 Quick Reflection
 
 - Why do **SIFT features** remain stable across multiple images?  
@@ -142,7 +169,7 @@ Push your notebook and screenshots to your GitHub repository:
 - `reconstruction.png` – 3-D point cloud visualization
 
 
-## 🧮 Evaluation (10 Marks)
+## 🧮 Evaluation (15 Marks)
 
 | Stage | Task | Marks |
 |:------:|:----------------------|:------:|
@@ -151,7 +178,7 @@ Push your notebook and screenshots to your GitHub repository:
 | 3 | F & RANSAC | 2 |
 | 4 | Pose Estimation | 2 |
 | 5 | 3-D Reconstruction | 2 |
-|💎 Bonus| Visualization Innovation | +2 |
+|💎 Bonus| Visualization Innovation | 5 |
 
 ⏱️ **Treat this like a real-time mini hackathon!**  
 Focus on making something that *works*, visualize every result, and **commit before time’s up.**
