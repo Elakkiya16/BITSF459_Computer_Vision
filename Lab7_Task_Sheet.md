@@ -1,4 +1,4 @@
-# 🧭 Mini Hackathon Lab 05 – Geometry, Analysis & Motion
+# 🧭 Mini Hackathon Lab 07 – Geometry, Analysis & Motion
 **Course:** BITS F459 – Computer Vision  
 **Instructor:** Dr Elakkiya R | BITS Pilani, Dubai Campus  
 **Duration:** ⏱️ 1 hr 30 min  
