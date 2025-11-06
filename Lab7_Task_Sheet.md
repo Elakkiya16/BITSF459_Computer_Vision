@@ -24,12 +24,12 @@ Use these stereo images (Trevi-style pair):
 | **Right View** | ![right](https://raw.githubusercontent.com/opencv/opencv/master/samples/data/aloeR.jpg) | [aloeR.jpg](https://raw.githubusercontent.com/opencv/opencv/master/samples/data/aloeR.jpg) |
 
 Download with:
-```bash
+
 wget https://raw.githubusercontent.com/opencv/opencv/master/samples/data/aloeL.jpg -O img1.jpg
 wget https://raw.githubusercontent.com/opencv/opencv/master/samples/data/aloeR.jpg -O img2.jpg
 
 
-```markdown
+
 ## ⚙️ Environment Setup
 
 To get started, install the required packages:
