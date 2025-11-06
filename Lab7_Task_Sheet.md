@@ -34,7 +34,7 @@ wget https://raw.githubusercontent.com/opencv/opencv/master/samples/data/aloeR.j
 
 To get started, install the required packages:
 
-```bash
+
 # Run this in your terminal or Colab cell
 pip install opencv-python numpy matplotlib
 
