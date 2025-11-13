@@ -63,7 +63,7 @@ Image link: https://raw.githubusercontent.com/your-repo/Lab08/data/detection/str
 1. Load the image in Python:
    ```python
    img = cv2.imread('street.png')
-````
+   ````
 
 2. Visually inspect and identify people manually.
 3. Record bounding box coordinates as `(x1, y1, x2, y2)`.
