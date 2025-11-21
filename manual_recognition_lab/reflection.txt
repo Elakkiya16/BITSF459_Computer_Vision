@@ -1,0 +1,7 @@
+﻿* No manual task was hard as such, only tedious and time consuming as we have to do trial-and-error to perfect the bounding box coordinates.
+
+* ML will find the exact boundary of the object by feature detection, and segment and give the segmented object as output.
+
+* /DL would automate the generation of the bounding box by automatically detecting the features of a person/shop/cafe/dog/car, and giving a box encompassing all features of that object.
+
+* One insight gained about recognition is: it is very easy for humans to do, but in terms of computers, it is computationally challenging. The standard feature detection algorithms like Canny and Harris models are not efficient for labelled detection. We need to use learning models (ML/DL) for quick analysis of objects.
