@@ -1,7 +1,4 @@
 # Lab Sheet – Image Recognition using SLP & MLP  
-### Course: Image Recognition & Neural Networks  
-### Instructor: Dr. R. Elakkiya
-
 ---
 
 ## 📌 1. Objective
@@ -56,7 +53,11 @@ Using Python or manual inspection:
 | …   | …   | …   | … |
 
 
+
+***
+
 ### **A2. Compute Global Statistical Features**
+
 For each image, compute:
 
 - Minimum pixel value  
@@ -65,23 +66,24 @@ For each image, compute:
 - Variance  
 - Standard deviation  
 
-Show the formula:
+Formulas:
 
 \[
-\mu = \frac{1}{N}\sum I_{ij},
-\qquad 
-\sigma^2 = \frac{1}{N}\sum (I_{ij}-\mu)^2
+\mu = \frac{1}{N}\sum I_{ij}
 \]
 
+\[
+\sigma^2 = \frac{1}{N}\sum(I_{ij}-\mu)^2
+\]
+
+***
 
 ### **A3. Edge-Based Features (Using 3×3 Sobel)**
 
-Use the filters:
-
-Horizontal:
+Horizontal Sobel:
 
 \[
-G_x = 
+G_x=
 \begin{bmatrix}
 -1 & 0 & 1\\
 -1 & 0 & 1\\
@@ -89,10 +91,10 @@ G_x =
 \end{bmatrix}
 \]
 
-Vertical:
+Vertical Sobel:
 
 \[
-G_y =
+G_y=
 \begin{bmatrix}
 1 & 1 & 1\\
 0 & 0 & 0\\
@@ -106,8 +108,9 @@ Steps:
 2. Compute:
 
 \[
-G_x = \sum I \cdot G_x,\quad
-G_y = \sum I \cdot G_y
+G_x = \sum (I \cdot G_x),
+\qquad
+G_y = \sum (I \cdot G_y)
 \]
 
 3. Compute gradient magnitude:
@@ -116,22 +119,24 @@ G_y = \sum I \cdot G_y
 G = \sqrt{G_x^2 + G_y^2}
 \]
 
-
+***
 
 ### **A4. 4-bin Histogram Feature**
-Compute bins:
+
+Bins:
 
 - 0–63  
 - 64–127  
 - 128–191  
 - 192–255  
 
-Obtain:
+Histogram vector:
 
 \[
-H = [h_1, h_2, h_3, h_4]
+H = [h_1,\; h_2,\; h_3,\; h_4]
 \]
 
+***
 
 ### **A5. Construct Final Feature Vector**
 
@@ -141,21 +146,29 @@ x = [1,\; f_1,\; f_2,\; f_3,\; h_1,\; h_2,\; h_3,\; h_4]^T
 
 Where:
 
-- **1** → bias  
-- **\(f_1\)** → |G_x|  
-- **\(f_2\)** → |G_y|  
-- **\(f_3\)** → mean intensity  
-- **\(h_1\)–\(h_4\)** → histogram bin counts  
+- **1** = bias  
+- **\(f_1\)** = \(|G_x|\)  
+- **\(f_2\)** = \(|G_y|\)  
+- **\(f_3\)** = mean intensity  
+- **\(h_1\)–\(h_4\)** = histogram counts  
 
+***
 
 # 🔹 Task B — Single Layer Perceptron (SLP)
 
-Given initial SLP weights:
+Initial SLP weights:
 
 \[
-w(0) =
+w(0)=
 \begin{bmatrix}
--50\\0.3\\0.4\\0.05\\0.02\\-0.01\\0.03\\0.04
+-50\\
+0.3\\
+0.4\\
+0.05\\
+0.02\\
+-0.01\\
+0.03\\
+0.04
 \end{bmatrix}
 \]
 
@@ -165,22 +178,25 @@ Learning rate:
 \eta = 0.01
 \]
 
-### **B1. Compute SLP net input**
+***
+
+### **B1. Compute SLP Net Input**
 
 \[
 v = w^T x
 \]
 
-Output:
+SLP output:
 
 \[
 y =
 \begin{cases}
-+1 & v \ge 0\\
--1 & v < 0
++1 & \text{if } v \ge 0\\
+-1 & \text{if } v < 0
 \end{cases}
 \]
 
+***
 
 ### **B2. SLP Weight Update**
 
@@ -194,63 +210,67 @@ If misclassified:
 w_{\text{new}} = w + \Delta w
 \]
 
-Perform at least **one weight update** for each image.
+Perform **one full weight update** for each image.
 
+***
 
-# 🔹 Task C — Multi Layer Perceptron (MLP)
+# 🔹 Task C — Multi-Layer Perceptron (MLP)
 
-Use the vector **without bias**:
+Use feature vector **without bias**:
 
 \[
 x_{MLP} = [f_1,\; f_2,\; f_3,\; h_1,\; h_2,\; h_3,\; h_4]
 \]
 
+***
+
 ### **MLP Architecture**
 
-Hidden layer (2 neurons):
+#### Hidden Layer (2 neurons)
 
 \[
-W^{(1)} =
+W^{(1)}=
 \begin{bmatrix}
 0.1 & 0.2 & 0.3 & 0.4 & 0.2 & -0.1 & 0.05\\
--0.2& 0.1& 0.05& 0.1& -0.3& 0.2& 0.1
+-0.2 & 0.1 & 0.05 & 0.1 & -0.3 & 0.2 & 0.1
 \end{bmatrix}
 \]
 
 \[
-b^{(1)} =
+b^{(1)}=
 \begin{bmatrix}
-0.4\\0.3
+0.4\\
+0.3
 \end{bmatrix}
 \]
 
-Sigmoid activation:
+Activation function:
 
 \[
 \sigma(z)=\frac{1}{1+e^{-z}}
 \]
 
-Output layer:
+#### Output Layer
 
 \[
-W^{(2)} = [1.2,\; -0.5], \quad b^{(2)} = -0.2
+W^{(2)}=[1.2,\;-0.5],\qquad b^{(2)}=-0.2
 \]
 
----
+***
 
-### **C1. Hidden-layer computation**
+### **C1. Hidden Layer Computation**
 
 \[
-z^{(1)} = W^{(1)} x_{MLP} + b^{(1)}
+z^{(1)} = W^{(1)}x_{MLP} + b^{(1)}
 \]
 
 \[
 h_i = \sigma(z_i)
 \]
 
----
+***
 
-### **C2. Output-layer computation**
+### **C2. Output Layer Computation**
 
 \[
 z^{(2)} = W^{(2)}h + b^{(2)}
@@ -265,17 +285,15 @@ Decision:
 - **Class A** if \(y > 0.5\)  
 - **Class B** otherwise  
 
----
+***
 
 # 🔹 Task D — Compare SLP and MLP
 
 Answer:
 
 1. Which model classified both images correctly?  
-2. Which feature had the highest influence on prediction?  
-3. Is the problem linearly separable based on your SLP results?  
-4. When would you prefer MLP over SLP in real-world image tasks?
+2. Which feature had the strongest influence?  
+3. Is the problem linearly separable?  
+4. When should MLP be preferred over SLP?
 
----
-
-
+***
