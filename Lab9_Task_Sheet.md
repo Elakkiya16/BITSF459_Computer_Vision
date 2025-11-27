@@ -41,8 +41,6 @@ Source: Wikimedia Public Domain
 
 ---
 
----
-
 # 🎯 3. Tasks
 
 ## 🔹 Task A — Image Processing & Feature Extraction
