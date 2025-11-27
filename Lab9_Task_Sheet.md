@@ -56,7 +56,6 @@ Using Python or manual inspection:
 | 140 | 142 | 141 | … |
 | …   | …   | …   | … |
 
----
 
 ### **A2. Compute Global Statistical Features**
 For each image, compute:
