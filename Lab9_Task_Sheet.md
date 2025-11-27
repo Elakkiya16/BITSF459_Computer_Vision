@@ -39,7 +39,6 @@ Source: Wikimedia Public Domain
 
 > Convert this to **grayscale**, resize to **28×28**, and use it as Image 2.
 
----
 
 # 🎯 3. Tasks
 
@@ -74,7 +73,6 @@ Show the formula:
 \sigma^2 = \frac{1}{N}\sum (I_{ij}-\mu)^2
 \]
 
----
 
 ### **A3. Edge-Based Features (Using 3×3 Sobel)**
 
@@ -118,7 +116,7 @@ G_y = \sum I \cdot G_y
 G = \sqrt{G_x^2 + G_y^2}
 \]
 
----
+
 
 ### **A4. 4-bin Histogram Feature**
 Compute bins:
@@ -134,7 +132,6 @@ Obtain:
 H = [h_1, h_2, h_3, h_4]
 \]
 
----
 
 ### **A5. Construct Final Feature Vector**
 
@@ -150,9 +147,6 @@ Where:
 - **\(f_3\)** → mean intensity  
 - **\(h_1\)–\(h_4\)** → histogram bin counts  
 
----
-
----
 
 # 🔹 Task B — Single Layer Perceptron (SLP)
 
@@ -187,7 +181,6 @@ y =
 \end{cases}
 \]
 
----
 
 ### **B2. SLP Weight Update**
 
@@ -203,9 +196,6 @@ w_{\text{new}} = w + \Delta w
 
 Perform at least **one weight update** for each image.
 
----
-
----
 
 # 🔹 Task C — Multi Layer Perceptron (MLP)
 
