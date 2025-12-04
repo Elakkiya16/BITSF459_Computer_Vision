@@ -100,4 +100,60 @@ Questions:
 ### Architecture 2 — Deeper Network with More Filters
 
 layer_defs = [];
-layer_defs.push({type:'input
+layer_defs.push({type:'input', out_sx:32, out_sy:32, out_depth:3});
+layer_defs.push({type:'conv', sx:3, filters:32, stride:1, pad:1, activation:'relu'});
+layer_defs.push({type:'conv', sx:3, filters:32, stride:1, pad:1, activation:'relu'});
+layer_defs.push({type:'pool', sx:2, stride:2});
+layer_defs.push({type:'conv', sx:3, filters:64, stride:1, pad:1, activation:'relu'});
+layer_defs.push({type:'pool', sx:2, stride:2});
+layer_defs.push({type:'softmax', num_classes:10});
+
+Questions:
+
+1. Does accuracy improve?
+2. How does training time change?
+3. Are deeper activations more abstract?
+
+### Architecture 3 — No Pooling
+
+layer_defs = [];
+layer_defs.push({type:'input', out_sx:32, out_sy:32, out_depth:3});
+layer_defs.push({type:'conv', sx:5, filters:16, stride:1, pad:2, activation:'relu'});
+layer_defs.push({type:'conv', sx:5, filters:16, stride:1, pad:2, activation:'relu'});
+layer_defs.push({type:'softmax', num_classes:10});
+
+Questions:
+
+1. Does removing pooling increase overfitting?
+2. Are gradients noisier?
+3. Does training slow down?
+
+## Part D — Final Report (Required)
+
+Submit a 1–2 page report including:
+
+### Screenshots
+
+* Training dashboard
+* Layer activations
+* Gradients
+* Test predictions
+* Architecture screenshots
+
+### Observations
+
+* Effect of each hyperparameter
+* Comparison of models
+* Which architecture performed best and why
+
+### Short Answers
+
+1. Why do deeper CNNs learn more complex patterns?
+2. Why does test accuracy lag behind training accuracy?
+3. Why is pooling important?
+4. What happens if stride is too large?
+5. What design principles did you learn today?
+
+## End of Lab
+
+This README can now be uploaded directly to GitHub.
