@@ -1,0 +1,10 @@
+﻿Eiffel Tower
+* Roof style: None; it’s a metal lattice tower.
+* Silhouette: Tall, tapering iron structure.
+* Symmetry: Symmetrical in vertical profile.
+* Color: Metallic brown/grey, lattice appearance.
+Taj Mahal
+* Roof style: Large central dome with smaller domes.
+* Silhouette: Central dome flanked by four minarets.
+* Symmetry: Perfect bilateral symmetry.
+* Color: White marble, very smooth surfaces
